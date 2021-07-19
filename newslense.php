@@ -11,7 +11,7 @@
 /*
 Plugin Name: News-Lense Form
 Plugin URI:  https://github.com/Centric-Data/newslense
-Description: This is a custom newsletter plugin, it can be activated using a plugin shortcode, <code>news-lense</code> in any page. Its using a two column layout, with custom css.
+Description: This is a custom newsletter plugin, it can be activated using a plugin shortcode. Its using a two column layout, with custom css.
 Author: Centric Data
 Version: 1.0.0
 Author URI: https://github.com/Centric-Data
