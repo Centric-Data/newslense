@@ -41,14 +41,16 @@ define( 'NL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 class NewsLense
 {
 
-  // Enqueue clf_load_scripts
-  public function nl_load_assets(){
-    wp_enqueue_style( 'newslense-css', NL_PLUGIN_URL . '/css/newslense.css', [], time(), 'all' );
-    wp_enqueue_script( 'newslense-js', NL_PLUGIN_URL . '/css/newslense.js', [], time(), 'all' );
-  }
-
   public function __construct(){
     add_shortcode( 'newsletter-lense', array( $this, 'nl_load_shortcode') );
+
+    add_action( 'wp_enqueue_scripts', array( $this, 'nl_load_assets' ) );
+  }
+
+  // Enqueue clf_load_scripts
+  public function nl_load_assets(){
+    wp_enqueue_style( 'newslense-css', NL_PLUGIN_URL . 'css/newslense.css', [], time(), 'all' );
+    wp_enqueue_script( 'newslense-js', NL_PLUGIN_URL . 'css/newslense.js', [], time(), 'all' );
   }
 
   // Shortcode Function for the homepage
