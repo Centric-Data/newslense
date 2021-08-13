@@ -34,3 +34,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'NL_LOCATION', dirname( __FILE__ ) );
 define( 'NL_LOCATION_URL' , plugins_url( '', __FILE__ ) );
 define( 'NL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+/**
+ *
+ */
+class NewsLense
+{
+
+  // Enqueue clf_load_scripts
+  public function nl_load_assets(){
+    wp_enqueue_style( 'newslense-css', NL_PLUGIN_URL . '/css/newslense.css', [], time(), 'all' );
+    wp_enqueue_script( 'newslense-js', NL_PLUGIN_URL . '/css/newslense.js', [], time(), 'all' );
+  }
+
+  public function __construct(){
+    add_shortcode( 'newsletter-lense', array( $this, 'nl_load_shortcode') );
+  }
+
+  // Shortcode Function for the homepage
+  public function nl_load_shortcode(){
+    ?>
+    <div class="footer__newsletter footer--item">
+      <h2 class="email__sub--title">Sign up for the monthly ZLC Newsletter</h2>
+      <div class="email__sub--desc">
+        <p>All the month's headlines and highlights from Zimbabwe Land Commission, direct to you monthly</p>
+        <div class="email__form">
+          <form action="#">
+            <div class="email__form--input">
+              <input type="email" id="email-addr" placeholder="Email address">
+              <button id="email-button">Sign up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <?php
+  }
+}
+new NewsLense;
