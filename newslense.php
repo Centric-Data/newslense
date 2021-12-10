@@ -69,7 +69,7 @@ class NewsLense
   public function nl_load_shortcode(){
     ?>
     <div class="footer__newsletter footer--item">
-      <h2 class="email__sub--title">Sign up for the monthly ZLC Newsletter</h2>
+      <h2 class="email__sub--title">Sign up for the quarterly ZLC Newsletter</h2>
       <div class="email__sub--desc">
         <p>All the month's headlines and highlights from Zimbabwe Land Commission, direct to you monthly</p>
         <div class="email__form">
@@ -93,7 +93,7 @@ class NewsLense
   {?>
     <script>
 
-      let nl_nonce  = '<?php wp_create_nonce('nl_wp_rest');  ?>'
+      let nl_nonce  = '<?php wp_create_nonce('nl_wp_rest');  ?>';
 
       ( function( $ ){
         $('#nl_form').on("submit", function( e ){
